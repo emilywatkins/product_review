@@ -2,7 +2,26 @@
 <p>-information about the business-</p>
 
 <p>three most recently added products:</p>
+<ul>
+  <% @newest.each do |product| %>
+  <div class="panel panel-transparent">
+    <li>
+      <%= link_to product.name, product_path(product) %>
+    </li>
+  </div>
+  <% end %>
+</ul>
+
 <p>product with the most reviews:</p>
+<ul>
+  <% @most_reviewed.each do |product| %>
+  <div class="panel panel-transparent">
+    <li>
+      <%= link_to product.name, product_path(product) %>
+    </li>
+  </div>
+  <% end %>
+</ul>
 
 <%= link_to 'view all products', products_path %>
 
