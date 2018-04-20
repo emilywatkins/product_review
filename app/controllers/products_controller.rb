@@ -27,11 +27,11 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      flash[:notice] = 'updated product'
       redirect_to product_path(@product)
+      flash[:notice] = 'updated product'
     else
-      flash[:alert] = 'try again, error occured'
       render :edit
+      flash[:alert] = 'try again, error occured'
     end
   end
 
