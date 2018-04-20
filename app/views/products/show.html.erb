@@ -3,3 +3,16 @@
 <p>price: $<%= @product.cost %></p>
 
 <p>country of origin <%= @product.country_of_origin %></p>
+
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product</h4>
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <li>
+        <%= link_to review.content_body, product_review_path(@product, review) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
