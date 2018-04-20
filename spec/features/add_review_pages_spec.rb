@@ -12,4 +12,10 @@ describe "the add a review process" do
     expect(page).to have_content 'It\'s okay'
   end
 
+  it "gives error when no value is entered" do
+    product = Product.create(:name => 'eggs', :cost => 2, :country_of_origin => 'USA')
+    visit new_product_review_path(product)
+    click_on 'Create Review'
+    expect(page).to have_content 'errors'
+  end
 end
