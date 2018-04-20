@@ -3,3 +3,5 @@
 <% @products.each do |product| %>
   <li> <%= link_to product.name, product_path(product) %> </li>
 <% end %>
+
+<h2><%= link_to "add a new product", new_product_path%></h2>
