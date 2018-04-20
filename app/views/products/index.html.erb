@@ -3,3 +3,9 @@
 
 <p>three most recently added products:</p>
 <p>product with the most reviews:</p>
+
+<p>all products shown below:</p>
+
+<% @products.each do |product| %>
+  <li> <%= product.name %> </li>
+<% end %>
