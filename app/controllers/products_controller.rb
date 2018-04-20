@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = 'updated product'
-      redirect_to products_path
+      redirect_to product_path(@product)
     else
       flash[:alert] = 'try again, error occured'
       render :edit
