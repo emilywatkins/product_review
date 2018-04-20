@@ -4,4 +4,5 @@ class Review < ActiveRecord::Base
   validates :author, :presence => true
   validates :content_body, :presence => true, length: { in: 50..250 }
   validates :rating, { :presence => true, :numericality => true, :inclusion => 1..5 }
+
 end

@@ -1,5 +1,5 @@
 class LandingController < ApplicationController
   def index
-    @products = Product.all
+    @domestic = Product.domestic
   end
 end

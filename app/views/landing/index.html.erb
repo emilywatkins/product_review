@@ -5,3 +5,20 @@
 <p>product with the most reviews:</p>
 
 <%= link_to 'view all products', products_path %>
+
+
+
+<% if @domestic.any? %>
+  <h4>Here are the domestic products currently available</h4>
+  <ul>
+    <% @domestic.each do |product| %>
+    <div class="panel panel-transparent">
+      <li>
+        <%= link_to product.name, product_path(product) %>
+      </li>
+    </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no domestic products currently available</p>
+<% end %>
